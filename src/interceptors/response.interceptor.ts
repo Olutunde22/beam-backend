@@ -18,7 +18,8 @@ export class ResponseInterceptor<T> implements NestInterceptor<T, Response<T>> {
     return next.handle().pipe(
       map((data) => {
         return {
-          statusCode: (cx.switchToHttp().getResponse().statusCode as number) ?? 200,
+          statusCode:
+            (cx.switchToHttp().getResponse().statusCode as number) ?? 200,
           message: 'OK',
           success: true,
           data,

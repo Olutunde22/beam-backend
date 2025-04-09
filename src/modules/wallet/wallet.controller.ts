@@ -5,7 +5,12 @@ import { FundWalletDto } from './dto/fund-wallet.dto';
 import { TransferFundsDto } from './dto/transfer-funds.dto';
 import { WithdrawFundsDto } from './dto/withdraw-funds.dto';
 import { ISignInPayload, RequestUser } from '@/src/decorators';
-import { BalanceDoc } from './wallet.doc';
+import {
+  BalanceDoc,
+  FundWalletDoc,
+  TransferFundsDoc,
+  WithdrawFundsDoc,
+} from './wallet.doc';
 
 @ApiBearerAuth()
 @Controller('wallet')
@@ -13,6 +18,7 @@ export class WalletController {
   constructor(private readonly walletService: WalletService) {}
 
   @Post('/fund')
+  @FundWalletDoc()
   fundWallet(
     @Body() fundWallet: FundWalletDto,
     @RequestUser() user: ISignInPayload,
@@ -27,6 +33,7 @@ export class WalletController {
   }
 
   @Post('/transfer')
+  @TransferFundsDoc()
   transferFunds(
     @Body() transferFunds: TransferFundsDto,
     @RequestUser() user: ISignInPayload,
@@ -35,6 +42,7 @@ export class WalletController {
   }
 
   @Post('/withdraw')
+  @WithdrawFundsDoc()
   withdrawFunds(
     @Body() withdrawFunds: WithdrawFundsDto,
     @RequestUser() user: ISignInPayload,
