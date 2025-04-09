@@ -19,15 +19,15 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validate(payload: JwtPayload) {
+  validate(payload: JwtPayload) {
     const cryptoKey = this.configService.get<string>('app.cryptoKey') as string;
     const cryptoIv = this.configService.get<string>('app.cryptoiv') as string;
-    
-    const cipher = this.helperEncryptionService.cryptoDecipher(
+
+    const cipher: IUserPayload = this.helperEncryptionService.cryptoDecipher(
       payload.data,
       cryptoKey,
       cryptoIv,
-    ) as IUserPayload;
+    );
     if (!cipher.id) {
       throw new UnauthorizedException(
         'You must be authorized to access this route',

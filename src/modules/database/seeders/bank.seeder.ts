@@ -12,9 +12,12 @@ export class BankSeeder {
   ) {}
 
   async seed() {
-    for (const bank of banks) {
-      const createdBank = this.bankRepository.create(bank);
-      await this.bankRepository.save(createdBank);
+    const dbBank = await this.bankRepository.find();
+    if (!dbBank || dbBank.length < 1) {
+      for (const bank of banks) {
+        const createdBank = this.bankRepository.create(bank);
+        await this.bankRepository.save(createdBank);
+      }
     }
   }
 }

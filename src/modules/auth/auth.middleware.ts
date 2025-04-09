@@ -35,11 +35,12 @@ export class AuthMiddleware implements NestMiddleware {
           'app.cryptoiv',
         ) as string;
 
-        const payload = this.helperEncryptionService.cryptoDecipher(
-          accessTokenDecoded.data,
-          cryptoKey,
-          cryptoIv,
-        ) as IUserPayload;
+        const payload: IUserPayload =
+          this.helperEncryptionService.cryptoDecipher(
+            accessTokenDecoded.data,
+            cryptoKey,
+            cryptoIv,
+          );
 
         if (!payload.id) {
           throw new ForbiddenException(

@@ -72,11 +72,10 @@ import { SeederService } from './modules/database/seeders/seeder.service';
   ],
   exports: [TypeOrmHealthIndicator],
 })
-// export class AppModule implements OnApplicationBootstrap {
-//   constructor(private readonly seederService: SeederService) {}
+export class AppModule implements OnApplicationBootstrap {
+  constructor(private readonly seederService: SeederService) {}
 
-//   async onApplicationBootstrap(): Promise<void> {
-//     await this.seederService.run();
-//   }
-// }
-export class AppModule {}
+  async onApplicationBootstrap(): Promise<void> {
+    await this.seederService.run();
+  }
+}
