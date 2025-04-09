@@ -4,7 +4,7 @@ import { ApiBearerAuth } from '@nestjs/swagger';
 import { FundWalletDto } from './dto/fund-wallet.dto';
 import { TransferFundsDto } from './dto/transfer-funds.dto';
 import { WithdrawFundsDto } from './dto/withdraw-funds.dto';
-import { ISignInPayload, RequestUser } from '@/src/decorators';
+import { ISignInPayload, RequestUser } from '@/decorators';
 import {
   BalanceDoc,
   FundWalletDoc,

@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { TransactionsService } from './transactions.service';
 import { ApiBearerAuth } from '@nestjs/swagger';
-import { RequestUser, ISignInPayload } from '@/src/decorators';
+import { RequestUser, ISignInPayload } from '@/decorators';
 import { TransactionDoc } from './transaction.doc';
 
 @ApiBearerAuth()

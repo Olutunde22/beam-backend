@@ -1,4 +1,4 @@
-import { Bank } from '@/src/typeorm/entities/bank.model';
+import { Bank } from '@/typeorm/entities/bank.model';
 import { v4 } from 'uuid';
 
 export const banks: Partial<Bank>[] = [

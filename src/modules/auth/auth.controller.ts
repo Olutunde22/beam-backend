@@ -1,8 +1,8 @@
 import { Controller, Post, Body, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
-import { ISignInPayload, RequestUser, SkipAuth } from '@/src/decorators';
-import { LocalAuthGuard } from '@/src/guards';
+import { ISignInPayload, RequestUser, SkipAuth } from '@/decorators';
+import { LocalAuthGuard } from '@/guards';
 import { LoginDto } from './dto/login.dto';
 import { LoginDoc, RegisterDoc } from './auth.doc';
 

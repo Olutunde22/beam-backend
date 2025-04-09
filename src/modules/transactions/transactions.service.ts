@@ -1,4 +1,4 @@
-import { Transaction } from '@/src/typeorm/entities/transaction.model';
+import { Transaction } from '@/typeorm/entities/transaction.model';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';

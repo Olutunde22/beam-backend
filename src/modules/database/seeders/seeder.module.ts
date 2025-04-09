@@ -1,7 +1,7 @@
-import { Bank } from '@/src/typeorm/entities/bank.model';
-import { Transaction } from '@/src/typeorm/entities/transaction.model';
-import { User } from '@/src/typeorm/entities/user.model';
-import { Wallet } from '@/src/typeorm/entities/wallet.model';
+import { Bank } from '@/typeorm/entities/bank.model';
+import { Transaction } from '@/typeorm/entities/transaction.model';
+import { User } from '@/typeorm/entities/user.model';
+import { Wallet } from '@/typeorm/entities/wallet.model';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SeederService } from './seeder.service';

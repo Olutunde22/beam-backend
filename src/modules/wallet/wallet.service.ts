@@ -6,8 +6,8 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, EntityManager } from 'typeorm';
-import { Wallet } from '@/src/typeorm/entities/wallet.model';
-import { User } from '@/src/typeorm/entities/user.model';
+import { Wallet } from '@/typeorm/entities/wallet.model';
+import { User } from '@/typeorm/entities/user.model';
 import { FundWalletDto } from './dto/fund-wallet.dto';
 import { TransferFundsDto } from './dto/transfer-funds.dto';
 import {
@@ -15,7 +15,7 @@ import {
   TransactionDirection,
   TransactionStatus,
   TransactionType,
-} from '@/src/typeorm/entities/transaction.model';
+} from '@/typeorm/entities/transaction.model';
 import { WithdrawFundsDto } from './dto/withdraw-funds.dto';
 
 @Injectable()

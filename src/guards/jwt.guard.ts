@@ -1,7 +1,7 @@
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { Reflector } from '@nestjs/core';
-import { SKIP_AUTH_DECORATOR } from 'src/decorators/skip-auth.decorator';
+import { SKIP_AUTH_DECORATOR } from '@/decorators/skip-auth.decorator';
 import { Observable } from 'rxjs';
 
 @Injectable()

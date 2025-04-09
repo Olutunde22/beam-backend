@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { banks } from './seeder.constant';
-import { Bank } from '@/src/typeorm/entities/bank.model';
+import { Bank } from '@/typeorm/entities/bank.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 

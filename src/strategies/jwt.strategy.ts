@@ -2,8 +2,8 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { IUserPayload } from 'src/decorators/request-user.decorator';
-import { HelperEncryptionService } from 'src/modules/helper/services/helper.encryption.service';
+import { IUserPayload } from '@/decorators/request-user.decorator';
+import { HelperEncryptionService } from '@/modules/helper/services/helper.encryption.service';
 import { JwtPayload } from '../modules/auth/auth.interface';
 
 @Injectable()

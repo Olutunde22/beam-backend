@@ -8,7 +8,7 @@ import { NextFunction, Response, Request } from 'express';
 import { AuthService } from './auth.service';
 import { HelperEncryptionService } from '../helper/services/helper.encryption.service';
 import { ConfigService } from '@nestjs/config';
-import { IUserPayload } from 'src/decorators';
+import { IUserPayload } from '@/decorators';
 
 @Injectable()
 export class AuthMiddleware implements NestMiddleware {

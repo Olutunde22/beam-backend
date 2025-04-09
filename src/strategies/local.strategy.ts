@@ -3,8 +3,8 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
 import { Request } from 'express';
 import { validate } from 'class-validator';
-import { ValidationExceptions } from 'src/exceptions';
-import { AuthService } from 'src/modules/auth/auth.service';
+import { ValidationExceptions } from '@/exceptions';
+import { AuthService } from '@/modules/auth/auth.service';
 import { LoginDto } from '../modules/auth/dto/login.dto';
 
 @Injectable()

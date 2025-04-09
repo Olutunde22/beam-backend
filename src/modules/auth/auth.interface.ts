@@ -1,4 +1,3 @@
 export interface JwtPayload {
-    data: string;
-  }
-  
+  data: string;
+}

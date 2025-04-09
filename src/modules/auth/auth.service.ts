@@ -1,18 +1,18 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { User } from '@/src/typeorm/entities/user.model';
+import { User } from '@/typeorm/entities/user.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { EntityManager, Repository } from 'typeorm';
 import { RegisterDto } from './dto/register.dto';
 import { JwtService } from '@nestjs/jwt';
-import { ISignInPayload, IUserPayload } from '@/src/decorators';
+import { ISignInPayload, IUserPayload } from '@/decorators';
 import { ConfigService } from '@nestjs/config';
 import { HelperEncryptionService } from '../helper/services/helper.encryption.service';
 import { JwtPayload } from './auth.interface';
-import { sec } from '@/src/lib/utils';
-import { Wallet } from '@/src/typeorm/entities/wallet.model';
-import { Bank } from '@/src/typeorm/entities/bank.model';
+import { sec } from '@/lib/utils';
+import { Wallet } from '@/typeorm/entities/wallet.model';
+import { Bank } from '@/typeorm/entities/bank.model';
 import * as bcrypt from 'bcrypt';
-import { config } from '@/src/config/app.config';
+import { config } from '@/config/app.config';
 
 @Injectable()
 export class AuthService {
