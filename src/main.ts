@@ -7,12 +7,13 @@ import { ValidationPipe, Logger } from '@nestjs/common';
 import helmet from 'helmet';
 import { AppConfig } from './config/app.config';
 import { acceptedDomains } from './lib/utils';
+import { Environment } from './config/app.config.validator';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const logger = new Logger();
   const configService = app.get(ConfigService);
-  const { version, isDev, port, baseUrl, globalPrefix } =
+  const { version, isDev, port, baseUrl, globalPrefix, nodeEnv } =
     configService.get<AppConfig>('app') as AppConfig;
 
   app.use(cookieParser());
@@ -20,7 +21,7 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix);
 
   app.enableCors({
-    origin: acceptedDomains,
+    origin: acceptedDomains[nodeEnv as Environment],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
