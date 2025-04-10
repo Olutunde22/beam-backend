@@ -29,7 +29,9 @@ describe('AuthService', () => {
             manager: {
               transaction: jest
                 .fn()
-                .mockImplementation(async (cb) => cb({ save: jest.fn() })),
+                .mockImplementation(
+                  async (cb) => await cb({ save: jest.fn() }),
+                ),
             },
           },
         },
